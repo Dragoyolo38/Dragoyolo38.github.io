@@ -1,0 +1,30 @@
+#button-showhide {
+    text-align: center;
+}
+
+#range-spectre {
+    margin-right: 5%;
+}
+
+#range-density {
+    margin-left: 5%;
+}
+
+#select-image-front {
+    width: 60%;
+}
+
+#select-image-back {
+    width: 60%;
+}
+#select-option {
+    width: 60%;
+}
+
+.coloneGauche {
+    margin-left: 10%
+}
+
+.green {
+    color: greenyellow
+}
