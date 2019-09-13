@@ -2711,6 +2711,10 @@ input, select, textarea {
 		.main .image.primary {
 			display: none;
 		}
+		
+		.main.show-image .image {
+			display: block;
+		}
 
 		.main .container {
 			padding: 5em 2.5em 8em 2.5em ;
@@ -2725,7 +2729,9 @@ input, select, textarea {
 				vertical-align: middle;
 				width: 1px;
 			}
-
+			.main.show-image .container:before {
+				min-height: 0;
+			}
 			.main .container .content {
 				display: inline-block;
 				margin-right: 1px;
@@ -3116,4 +3122,21 @@ input, select, textarea {
 					padding: 0;
 				}
 
+	}
+
+
+
+
+	.fond-blanc {
+		background-color: white;
+		position: fixed;
+		height: 500px;
+		width: 100%;
+		z-index: 999;
+		top : 10%;
+	}
+	
+	.button-clos {
+		background-color: darkred;
+		color: white;
 	}

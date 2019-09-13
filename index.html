@@ -12,7 +12,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
 		<!-- Header -->
 			<section id="header">
 				<header class="major">
@@ -25,7 +24,7 @@
 					</ul>
 				</div>
 			</section>
-
+			
 		<!-- One -->
 			<section id="one" class="main special">
 				<div class="container">
@@ -41,14 +40,14 @@
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="main special">
+			<section id="two" class="main special show-imaged">
 				<div class="container">
-					<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>
+					<span class="image fit primary"><img src="images/pic02.gif" alt="" /></span>
 					<div class="content">
 						<header class="major">
-							<h2>Stuff I do</h2>
+							<h2>Création PhotoShop</h2>
 						</header>
-						<p>Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate.</p>
+						<p>Un des cours qu'on nous à donner est sur le  PhotoShop, le fond du cours être intérésent mais la forme je ne les pas aprésier</p>
 						<ul class="icons-grid">
 							<li>
 								<span class="icon major fa-camera-retro"></span>
@@ -73,9 +72,9 @@
 			</section>
 
 		<!-- Three -->
-			<section id="three" class="main special">
+			<section id="three" class="main special show-image">
 				<div class="container">
-					<span class="image fit primary"><img src="images/pic03.jpg" alt="" /></span>
+					<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
 					<div class="content">
 						<header class="major">
 							<h2>One more thing</h2>
@@ -435,19 +434,58 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li>
+						<li>&copy; Untitled</li><li>Design: <a class="snake">snake</a></li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li>
 					</ul>
 				</footer>
 			</section>
-
+			<div class="fond-blanc">
+						<canvas id="canvas" width=800 height=350 style="border: dotted 1px black">
+							Please update your browser to one that supports HTML5 and Canvas
+						</canvas>
+						<button class="button-clos">X</button>
+			</div>
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://rawgit.com/Haeresis/konami-code-js/master/src/konami-code.js"></script>
+
+			<script type="text/javascript" src="assets/snake/SnakeLib.js"></script>
+			
+			<script>
+				$(".fond-blanc").hide();
+				console.log('try ⬆️⬆️⬇️⬇️⬅️➡⬅️️➡️BA');
+				new KonamiCode(function () {
+					console.log('KONAMI activated');
+					// bomb
+					// var s = document.createElement('script');s.setAttribute('src', 'http://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);
+					showSnake();
+					
+				});
+				$(".button-clos").click(function() {
+					$(".fond-blanc").hide();
+
+				});
+				function showSnake() {
+					$(".fond-blanc").show();
+
+					// snake
+					Game = SnakeLib;
+					//Game.HTML.Canvas = document.body;
+					Game.HTML.Canvas = document.getElementById("canvas");
+
+					Game.Init(false);
+					Game.StartGame();
+				}
+				$(".snake").click(function() {
+					showSnake();
+
+				});
+			</script>
 
 			
 	</body>
